@@ -4,8 +4,6 @@
     --accent-color: #0070f3;
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.4);
-    --separator-color: rgba(255, 255, 255, 0.05);
-    --flow-color: rgba(0, 112, 243, 0.8);
 }
 
 * {
@@ -50,17 +48,6 @@ canvas {
     display: block;
 }
 
-#model-status-subtle {
-    position: absolute;
-    bottom: -40px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 0.6rem;
-    letter-spacing: 4px;
-    color: rgba(255, 255, 255, 0.2);
-    text-transform: uppercase;
-}
 
 /* Minimalist Chat Interface */
 #chat-container {
@@ -143,25 +130,6 @@ canvas {
     width: 100%;
 }
 
-.terminal-cursor-indicator {
-    font-size: 2rem;
-    color: var(--accent-color);
-    margin-right: 1.5rem;
-    margin-top: 0.4rem;
-    animation: blink 1s infinite step-end;
-}
-
-@keyframes blink {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-}
 
 #chat-input {
     background: transparent;
@@ -173,26 +141,6 @@ canvas {
     outline: none;
 }
 
-/* Start Button */
-.game-btn {
-    background: transparent;
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 1rem 3rem;
-    font-family: inherit;
-    font-size: 0.8rem;
-    letter-spacing: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 3rem;
-    text-transform: uppercase;
-}
-
-.game-btn:hover {
-    background: var(--accent-color);
-    color: #000;
-    box-shadow: 0 0 20px var(--accent-color);
-}
 
 @media (max-width: 768px) {
     #chat-container {

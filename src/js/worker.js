@@ -8,15 +8,6 @@ let embeddingsData = null;
 let embedder = null;
 let generator = null;
 
-let modelProgress = {
-    embedder: 0,
-    llm: 0
-};
-
-const updateGlobalProgress = () => {
-    const loadProgress = (modelProgress.embedder + modelProgress.llm) / 2;
-    self.postMessage({ type: 'progress', progress: loadProgress });
-};
 
 async function loadData() {
     if (!embeddingsData) {
@@ -28,14 +19,7 @@ async function loadData() {
 
 async function getEmbedder() {
     if (!embedder) {
-        embedder = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2', {
-            progress_callback: (progress) => {
-                if (progress.status === 'progress' || progress.status === 'done') {
-                    modelProgress.embedder = progress.status === 'done' ? 100 : progress.progress;
-                    updateGlobalProgress();
-                }
-            }
-        });
+        embedder = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
     }
     return embedder;
 }
@@ -45,13 +29,7 @@ async function getEngine() {
         const selectedModel = 'onnx-community/Qwen2.5-0.5B-Instruct';
         generator = await pipeline('text-generation', selectedModel, {
             device: 'webgpu',
-            dtype: 'q4',
-            progress_callback: (progress) => {
-                if (progress.status === 'progress' || progress.status === 'done') {
-                    modelProgress.llm = progress.status === 'done' ? 100 : progress.progress;
-                    updateGlobalProgress();
-                }
-            }
+            dtype: 'q4'
         });
     }
     return generator;

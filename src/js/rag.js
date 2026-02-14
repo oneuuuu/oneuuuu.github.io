@@ -1,20 +1,14 @@
 // rag.js - Proxy for worker.js
 const worker = new Worker(new URL('./worker.js', import.meta.url), { type: 'module' });
 
-let onProgressUpdate = null;
 let askResolve = null;
 let askOnStream = null;
 
-export function setOnProgressUpdate(callback) {
-    onProgressUpdate = callback;
-}
 
 worker.onmessage = (e) => {
-    const { type, progress, text, error } = e.data;
+    const { type, text, error } = e.data;
 
-    if (type === 'progress' && onProgressUpdate) {
-        onProgressUpdate(progress, 'HYBRID ENGINE');
-    } else if (type === 'init-complete') {
+    if (type === 'init-complete') {
         if (initResolve) initResolve();
     } else if (type === 'stream' && askOnStream) {
         askOnStream(text);
