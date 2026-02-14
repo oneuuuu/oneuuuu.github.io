@@ -1,6 +1,6 @@
 # Wang Yu's AI Portfolio
 
-A minimalist, high-tech personal portfolio featuring an integrated AI assistant, local RAG (Retrieval-Augmented Generation), and high-performance animations.
+A minimalist personal portfolio featuring an integrated AI assistant, local RAG (Retrieval-Augmented Generation), and animations.
 
 ## ✨ Features
 - **Minimalist Terminal UI**: A sleek, dark-mode terminal interface for interaction.
