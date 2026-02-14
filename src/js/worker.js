@@ -42,7 +42,7 @@ function cosineSimilarity(v1, v2) {
     return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
 }
 
-async function search(query, topK = 3) {
+async function search(query, topK = 10) {
     const data = await loadData();
     const currentEmbedder = await getEmbedder();
     const output = await currentEmbedder(query, { pooling: 'mean', normalize: true });
@@ -75,7 +75,19 @@ self.onmessage = async (e) => {
             const messages = [
                 {
                     role: "system",
-                    content: "You are Wang Yu. Always answer concisely. Use ONLY the provided context to answer questions about Wang Yu. If the answer is not in the context, politely say you don't know but offer to tell them about his skills or projects. Context:\n" + context
+                    content: `You are a professional AI assistant for Wang Yu's portfolio. 
+[DATA MAP]
+- "he", "him", "his" -> refers to Wang Yu.
+- "you", "your" -> refers to Wang Yu (the person the user is asking about).
+
+[RULES]
+1. Answer ONLY using the facts in the [CONTEXT] below.
+2. If info is missing, say "Data not found in records."
+3. LISTS: When listing companies or skills, provide a UNIQUE, comma-separated list.
+4. NO INFERENCE: Do not guess or use outside knowledge.
+
+[CONTEXT]
+${context}`
                 },
                 { role: "user", content: query }
             ];

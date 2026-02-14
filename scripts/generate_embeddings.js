@@ -14,6 +14,15 @@ async function generateEmbeddings() {
 
     const chunks = [];
 
+    // Add Global Overview (for general questions)
+    const experienceList = portfolio.experience.map(e => e.company).join(', ');
+    const projectList = portfolio.projects.map(p => p.name).join(', ');
+    chunks.push({
+        id: 'overview',
+        content: `Wang Yu's professional overview: He has worked at ${experienceList}. His projects include ${projectList}. He is a ${portfolio.about}`,
+        metadata: { section: 'overview' }
+    });
+
     // Add "About"
     chunks.push({
         id: 'about',
@@ -42,7 +51,7 @@ async function generateEmbeddings() {
     // Add Skills
     chunks.push({
         id: 'skills',
-        content: `My skills include: ${portfolio.skills.join(', ')}`,
+        content: `[DATA:SKILLS_LIST] ${portfolio.skills.join(', ')}`,
         metadata: { section: 'skills' }
     });
 
