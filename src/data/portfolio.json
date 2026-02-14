@@ -1,49 +1,123 @@
 {
-    "about": "I am a passionate software engineer focused on building cutting-edge frontend applications. I love exploring new technologies like WebGPU, WASM, and browser-side AI.",
+    "about": "I am Wang Yu, a Full Stack Developer based in Singapore. I specialize in building high-performance web applications, real-time services, and smart autocomplete features using machine learning. I am passionate about modern web technologies and building seamless user experiences.",
     "experience": [
         {
-            "company": "Tech Innovators",
-            "role": "Senior Frontend Engineer",
-            "period": "2022 - Present",
-            "description": "Leading the development of a real-time collaboration platform using React and WebSockets. Optimized performance by 40%."
+            "company": "Grab",
+            "role": "Fullstack Developer",
+            "period": "2021/03 - 2025/05",
+            "description": "Developed and maintained customer live chat services using WebSockets. Built smart autocomplete using ML. Developed microservices in Go on AWS with gRPC. Managed infrastructure via Terraform and Datadog."
         },
         {
-            "company": "Web Solutions Inc.",
+            "company": "Navig8",
             "role": "Frontend Developer",
-            "period": "2020 - 2022",
-            "description": "Built responsive web applications for various clients using Vue.js and Tailwind CSS."
+            "period": "2019/10 - 2021/01",
+            "description": "Developed web apps for the shipping industry using Angular, RxJS, and TypeScript. Maintained the component library and wrote unit tests with Jasmine."
+        },
+        {
+            "company": "NCS",
+            "role": "Software Engineer",
+            "period": "2019/04 - 2019/10",
+            "description": "Developed admin portals using Angular and Spring Boot. Built batch processing systems with Spring Batch. Wrote tests using JUnit and Mockito."
+        },
+        {
+            "company": "Xtremax",
+            "role": "Web Developer",
+            "period": "2017/06 – 2018/11",
+            "description": "Maintained licensing systems using Spring, iBATIS, and WebLogic. Researched and prototyped IoT solutions with Raspberry Pi and AWS IoT."
         }
     ],
     "projects": [
         {
-            "name": "Local AI Chat",
-            "description": "A fully client-side chatbot using Transformers.js and RAG. Runs entirely in the browser with no backend.",
+            "name": "paradiso",
+            "description": "A CLI program to scan for videos and serve them in the browser.",
             "technologies": [
-                "JavaScript",
-                "Transformers.js",
-                "WebGPU"
+                "React",
+                "TypeScript",
+                "Sass",
+                "Go",
+                "SQLite"
             ]
         },
         {
-            "name": "Visualizer Web",
-            "description": "A high-performance data visualization tool built with D3.js and Canvas API.",
+            "name": "show",
+            "description": "An English dictionary command line program.",
             "technologies": [
-                "D3.js",
-                "Canvas",
-                "TypeScript"
+                "Node.js"
+            ]
+        },
+        {
+            "name": "morning",
+            "description": "A music alarm mobile app.",
+            "technologies": [
+                "Flutter"
+            ]
+        },
+        {
+            "name": "passkey",
+            "description": "A password manager desktop app.",
+            "technologies": [
+                "Flutter"
+            ]
+        },
+        {
+            "name": "nopban",
+            "description": "A web app for users to rate movies, books, and music.",
+            "technologies": [
+                "React",
+                "Node.js",
+                "Puppeteer",
+                "PostgreSQL",
+                "CircleCI",
+                "Heroku"
+            ]
+        },
+        {
+            "name": "aerobic",
+            "description": "An interval timer app for aerobic exercises.",
+            "technologies": [
+                "React",
+                "Web Audio API"
+            ]
+        },
+        {
+            "name": "isentia",
+            "description": "An RSS reader.",
+            "technologies": [
+                "Angular"
             ]
         }
     ],
     "skills": [
-        "JavaScript",
-        "TypeScript",
         "React",
-        "Vue.js",
+        "TypeScript",
+        "Sass/CSS",
+        "Angular",
+        "RxJS",
+        "Go",
         "Node.js",
-        "Eleventy",
-        "CSS/HTML",
-        "WebGPU",
-        "WASM",
-        "Machine Learning"
+        "Spring Boot",
+        "PostgreSQL",
+        "SQLite",
+        "Firebase",
+        "Oracle",
+        "Flutter",
+        "React Native",
+        "AWS",
+        "Heroku",
+        "Netlify",
+        "CircleCI",
+        "Terraform",
+        "Datadog",
+        "Jenkins"
+    ],
+    "education": [
+        {
+            "school": "National University of Singapore",
+            "degree": "B.Eng. (Mechanical Engineering)",
+            "year": "2017"
+        },
+        {
+            "certification": "AWS Certified Developer – Associate"
+        }
     ]
 }

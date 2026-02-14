@@ -46,6 +46,16 @@ async function generateEmbeddings() {
         metadata: { section: 'skills' }
     });
 
+    // Add Education
+    portfolio.education.forEach((edu, index) => {
+        const content = edu.degree ? `${edu.degree} at ${edu.school} (Graduated ${edu.year})` : `Certification: ${edu.certification}`;
+        chunks.push({
+            id: `education-${index}`,
+            content: content,
+            metadata: { section: 'education', ...edu }
+        });
+    });
+
     console.log(`Prepared ${chunks.length} chunks. Loading embedding model...`);
 
     const embedder = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
